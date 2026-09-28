@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Vtrendadz | Digital Marketing Agency</title>
+
+    <meta name="description"
+        content="Contact Vtrendadz for web development, SEO, digital marketing, social media marketing and branding services.">
+
+    <link rel="canonical" href="https://www.vtrendadz.com/contact.html">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="page-loader">
+        <img src="images/vtrendadz-logo-transparent.png" alt="Vtrendadz" class="loader-logo-image">
+    </div>
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                Vtrend<span>adz</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About Us</a>
+
+                <div class="dropdown">
+
+                    <button class="dropdown-btn">
+                        Services <span>⌄</span>
+                    </button>
+
+                    <div class="dropdown-menu">
+
+                        <a href="services.html">
+                            All Services
+                        </a>
+
+                        <a href="services/web-development.html">
+                            Web Development
+                        </a>
+
+                        <a href="services/seo.html">
+                            SEO
+                        </a>
+
+                        <a href="services/digital-marketing.html">
+                            Digital Marketing
+                        </a>
+
+                        <a href="services/social-media.html">
+                            Social Media Marketing
+                        </a>
+
+                        <a href="services/branding.html">
+                            Branding & Design
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="active">
+                    Contact
+                </a>
+
+                <a href="contact.html" class="nav-btn">
+                    Let's Talk ↗
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTACT HERO -->
+
+    <section class="inner-hero">
+
+        <div class="inner-hero-container">
+
+            <div class="inner-hero-content reveal">
+
+                <span class="small-title">
+                    GET IN TOUCH
+                </span>
+
+                <h1>
+                    Let's talk about
+                    <span>your next project.</span>
+                </h1>
+
+                <p>
+                    Have a website, marketing or branding project
+                    in mind? Tell us about it and let's start a
+                    conversation.
+                </p>
+
+            </div>
+
+
+            <div class="inner-hero-image reveal">
+
+                <img src="images/hero.jpg" alt="Contact Vtrendadz">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT AREA -->
+
+    <section class="section">
+
+        <div class="container contact-grid">
+
+            <!-- CONTACT INFO -->
+
+            <div class="contact-info reveal">
+
+                <span class="small-title">
+                    CONTACT DETAILS
+                </span>
+
+                <h2>
+                    Start a
+                    <span>conversation.</span>
+                </h2>
+
+                <p>
+                    Whether you need a new website, better search
+                    visibility or a complete digital strategy,
+                    we're ready to hear about your project.
+                </p>
+
+
+                <div class="contact-detail">
+
+                    <strong>Email</strong>
+
+                    <a href="mailto:hello@vtrendadz.com">
+                        hello@vtrendadz.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                    <strong>Phone</strong>
+
+                    <a href="tel:+910000000000">
+                        +91 00000 00000
+                    </a>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                    <strong>Location</strong>
+
+                    <p>
+                        Tamil Nadu, India
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div class="contact-form-wrapper reveal">
+
+                <form class="contact-form" onsubmit="return submitForm(event)">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="service">
+                            Service
+                        </label>
+
+                        <select id="service" name="service">
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option>
+                                Web Development
+                            </option>
+
+                            <option>
+                                SEO
+                            </option>
+
+                            <option>
+                                Digital Marketing
+                            </option>
+
+                            <option>
+                                Social Media Marketing
+                            </option>
+
+                            <option>
+                                Branding & Design
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Tell us about your project
+                        </label>
+
+                        <textarea id="message" name="message" rows="6"
+                            placeholder="Tell us a little about your project..." required></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary form-btn">
+
+                        Send Message ↗
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="footer-logo">
+                    Vtrend<span>adz</span>
+                </a>
+
+                <p>
+                    A creative digital marketing agency helping
+                    businesses build stronger digital brands,
+                    websites and marketing experiences.
+                </p>
+
+            </div>
+
+
+            <div class="footer-services">
+
+                <h3>Services</h3>
+
+                <a href="services/web-development.html">
+                    Web Development
+                </a>
+
+                <a href="services/seo.html">
+                    SEO
+                </a>
+
+                <a href="services/digital-marketing.html">
+                    Digital Marketing
+                </a>
+
+                <a href="services/social-media.html">
+                    Social Media Marketing
+                </a>
+
+                <a href="services/branding.html">
+                    Branding & Design
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <strong>Email</strong><br>
+                    hello@vtrendadz.com
+                </p>
+
+                <p>
+                    <strong>Phone</strong><br>
+                    +91 00000 00000
+                </p>
+
+                <p>
+                    <strong>Location</strong><br>
+                    Tamil Nadu, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 Vtrendadz. All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
