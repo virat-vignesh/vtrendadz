@@ -1,32 +1,72 @@
-/* =========================================================
-   VTRENDADZ JAVASCRIPT
-========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       LOADER
+    ===================================================== */
+
+    const loader = document.getElementById("loader");
+
+    function hideLoader() {
+
+        if (!loader) return;
+
+        loader.classList.add("loaded");
+
+        setTimeout(function () {
+
+            if (loader && loader.parentNode) {
+                loader.parentNode.removeChild(loader);
+            }
+
+        }, 600);
+    }
+
+    if (document.readyState === "complete") {
+
+        setTimeout(hideLoader, 250);
+
+    } else {
+
+        window.addEventListener("load", function () {
+
+            setTimeout(hideLoader, 250);
+
+        }, { once: true });
+
+        /* Safety fallback */
+        setTimeout(hideLoader, 2500);
+    }
 
 
     /* =====================================================
-       PAGE LOADER
+       NAVBAR
     ===================================================== */
 
-    const pageLoader =
-        document.getElementById("pageLoader");
+    const navbar =
+        document.getElementById("navbar");
 
+    function updateNavbar() {
 
-    window.addEventListener("load", function () {
+        if (!navbar) return;
 
-        if (pageLoader) {
+        if (window.scrollY > 30) {
 
-            setTimeout(function () {
+            navbar.classList.add("scrolled");
 
-                pageLoader.classList.add("loaded");
+        } else {
 
-            }, 500);
+            navbar.classList.remove("scrolled");
 
         }
+    }
 
-    });
+    window.addEventListener(
+        "scroll",
+        updateNavbar,
+        { passive: true }
+    );
 
+    updateNavbar();
 
 
     /* =====================================================
@@ -36,244 +76,331 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuToggle =
         document.getElementById("menuToggle");
 
-
     const navMenu =
         document.getElementById("navMenu");
 
 
-    if (menuToggle && navMenu) {
+    function openMenu() {
+
+        if (!menuToggle || !navMenu) return;
+
+        menuToggle.classList.add("active");
+
+        navMenu.classList.add("open");
+
+        document.body.classList.add("menu-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Close navigation menu"
+        );
+    }
 
 
-        menuToggle.addEventListener(
-            "click",
-            function () {
+    function closeMenu() {
 
+        if (!menuToggle || !navMenu) return;
 
-                const isOpen =
-                    menuToggle.classList.toggle("active");
+        menuToggle.classList.remove("active");
 
+        navMenu.classList.remove("open");
 
-                navMenu.classList.toggle("active");
+        document.body.classList.remove("menu-open");
 
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
-
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    isOpen
-                        ? "Close menu"
-                        : "Open menu"
-                );
-
-
-            }
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
         );
 
 
-        /* Close menu when normal link clicked */
+        /* Close services dropdown */
+
+        document
+            .querySelectorAll(".nav-dropdown")
+            .forEach(function (dropdown) {
+
+                dropdown.classList.remove("open");
+
+                const button =
+                    dropdown.querySelector(
+                        ".dropdown-toggle"
+                    );
+
+                if (button) {
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+            });
+    }
+
+
+    function toggleMenu(event) {
+
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        if (!navMenu) return;
+
+        if (navMenu.classList.contains("open")) {
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
+    }
+
+
+    /* Hamburger click */
+
+    if (menuToggle) {
+
+        menuToggle.addEventListener(
+            "click",
+            toggleMenu
+        );
+
+        /*
+         * Prevent touch/click events from
+         * propagating to document.
+         */
+
+        menuToggle.addEventListener(
+            "touchend",
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                toggleMenu(event);
+
+            },
+            { passive: false }
+        );
+    }
+
+
+    /* =====================================================
+       SERVICES DROPDOWN
+    ===================================================== */
+
+    const dropdowns =
+        document.querySelectorAll(
+            ".nav-dropdown"
+        );
+
+
+    dropdowns.forEach(function (dropdown) {
+
+        const toggle =
+            dropdown.querySelector(
+                ".dropdown-toggle"
+            );
+
+        if (!toggle) return;
+
+
+        toggle.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+
+                /* Only mobile uses click */
+
+                if (window.innerWidth > 900) {
+                    return;
+                }
+
+
+                const isOpen =
+                    dropdown.classList.contains(
+                        "open"
+                    );
+
+
+                /* Close other dropdowns */
+
+                dropdowns.forEach(
+                    function (other) {
+
+                        if (other !== dropdown) {
+
+                            other.classList.remove(
+                                "open"
+                            );
+
+                            const otherToggle =
+                                other.querySelector(
+                                    ".dropdown-toggle"
+                                );
+
+                            if (otherToggle) {
+
+                                otherToggle.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+                            }
+                        }
+                    }
+                );
+
+
+                if (isOpen) {
+
+                    dropdown.classList.remove(
+                        "open"
+                    );
+
+                    toggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                } else {
+
+                    dropdown.classList.add(
+                        "open"
+                    );
+
+                    toggle.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+                }
+
+            }
+        );
+    });
+
+
+    /* =====================================================
+       NAV LINKS
+    ===================================================== */
+
+    if (navMenu) {
 
         navMenu
-            .querySelectorAll("a")
+            .querySelectorAll(
+                "a"
+            )
             .forEach(function (link) {
-
 
                 link.addEventListener(
                     "click",
                     function () {
 
+                        /*
+                         * Don't interfere with
+                         * dropdown toggle.
+                         */
 
-                        menuToggle.classList.remove(
-                            "active"
-                        );
+                        setTimeout(function () {
 
+                            if (
+                                window.innerWidth <= 900
+                            ) {
+                                closeMenu();
+                            }
 
-                        navMenu.classList.remove(
-                            "active"
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-label",
-                            "Open menu"
-                        );
-
+                        }, 50);
 
                     }
                 );
-
-
             });
-
     }
 
 
-
     /* =====================================================
-       MOBILE SERVICES DROPDOWN
+       CLICK OUTSIDE
     ===================================================== */
 
-    const dropdownButtons =
-        document.querySelectorAll(
-            ".dropdown-btn"
-        );
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (!navMenu || !menuToggle) {
+                return;
+            }
 
 
-    dropdownButtons.forEach(
-        function (button) {
+            /* IMPORTANT:
+               Do not close when hamburger is clicked */
+
+            if (
+                menuToggle.contains(event.target)
+            ) {
+                return;
+            }
 
 
-            button.addEventListener(
-                "click",
-                function (event) {
+            if (
+                navMenu.contains(event.target)
+            ) {
+                return;
+            }
 
 
-                    /* Only mobile */
+            if (
+                navMenu.classList.contains("open")
+            ) {
 
-                    if (window.innerWidth <= 900) {
-
-
-                        event.preventDefault();
-
-                        event.stopPropagation();
-
-
-                        const dropdown =
-                            button.closest(
-                                ".nav-dropdown"
-                            );
-
-
-                        const wasOpen =
-                            dropdown.classList.contains(
-                                "open"
-                            );
-
-
-                        /* Close all */
-
-                        document
-                            .querySelectorAll(
-                                ".nav-dropdown"
-                            )
-                            .forEach(
-                                function (item) {
-
-
-                                    item.classList.remove(
-                                        "open"
-                                    );
-
-
-                                    const itemButton =
-                                        item.querySelector(
-                                            ".dropdown-btn"
-                                        );
-
-
-                                    if (itemButton) {
-
-                                        itemButton.setAttribute(
-                                            "aria-expanded",
-                                            "false"
-                                        );
-
-                                    }
-
-                                }
-                            );
-
-
-                        /* Open clicked */
-
-                        if (!wasOpen) {
-
-                            dropdown.classList.add(
-                                "open"
-                            );
-
-
-                            button.setAttribute(
-                                "aria-expanded",
-                                "true"
-                            );
-
-                        }
-
-                    }
-
-                }
-            );
+                closeMenu();
+            }
 
         }
     );
 
 
+    /* =====================================================
+       ESCAPE
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeMenu();
+
+            }
+        }
+    );
+
 
     /* =====================================================
-       RESET MENU WHEN GOING DESKTOP
+       RESIZE
     ===================================================== */
 
     window.addEventListener(
         "resize",
         function () {
 
-
             if (window.innerWidth > 900) {
 
-
-                if (navMenu) {
-
-                    navMenu.classList.remove(
-                        "active"
-                    );
-
-                }
-
-
-                if (menuToggle) {
-
-                    menuToggle.classList.remove(
-                        "active"
-                    );
-
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        "Open menu"
-                    );
-
-                }
-
-
-                document
-                    .querySelectorAll(
-                        ".nav-dropdown"
-                    )
-                    .forEach(
-                        function (item) {
-
-                            item.classList.remove(
-                                "open"
-                            );
-
-                        }
-                    );
+                closeMenu();
 
             }
 
@@ -281,122 +408,155 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-
     /* =====================================================
-       SCROLL REVEAL
+       ACTIVE PAGE
     ===================================================== */
 
-    const revealItems =
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
+
+
+    document
+        .querySelectorAll(
+            ".nav-menu > a:not(.nav-btn)"
+        )
+        .forEach(function (link) {
+
+            const href =
+                link.getAttribute("href");
+
+            if (!href) return;
+
+
+            const linkPage =
+                href
+                    .split("/")
+                    .pop()
+                    .split("#")[0]
+                    .toLowerCase();
+
+
+            if (
+                currentPage === linkPage ||
+                (
+                    currentPage === "" &&
+                    linkPage === "index.html"
+                )
+            ) {
+
+                link.classList.add("active");
+            }
+        });
+
+
+    /* Services active */
+
+    const servicePages = [
+        "web-development.html",
+        "seo.html",
+        "performance-marketing.html",
+        "social-media-marketing.html",
+        "content-marketing.html",
+        "branding.html",
+        "creative-design.html",
+        "lead-generation.html"
+    ];
+
+
+    if (servicePages.includes(currentPage)) {
+
+        document
+            .querySelectorAll(".nav-dropdown")
+            .forEach(function (dropdown) {
+
+                dropdown.classList.add("active");
+
+            });
+    }
+
+
+    /* =====================================================
+       REVEAL
+    ===================================================== */
+
+    const revealElements =
         document.querySelectorAll(
             ".reveal"
         );
 
 
-    if ("IntersectionObserver" in window) {
-
+    if (
+        revealElements.length &&
+        "IntersectionObserver" in window
+    ) {
 
         const observer =
             new IntersectionObserver(
                 function (entries) {
 
-
                     entries.forEach(
                         function (entry) {
-
 
                             if (
                                 entry.isIntersecting
                             ) {
 
-
                                 entry.target.classList.add(
                                     "show"
                                 );
 
-
                                 observer.unobserve(
                                     entry.target
                                 );
-
                             }
 
                         }
                     );
 
-
                 },
                 {
-                    threshold: 0.12
+                    threshold: 0.12,
+
+                    rootMargin:
+                        "0px 0px -50px 0px"
                 }
             );
 
 
-        revealItems.forEach(
-            function (item) {
+        revealElements.forEach(
+            function (element) {
 
-                observer.observe(item);
+                observer.observe(element);
 
             }
         );
-
 
     } else {
 
+        revealElements.forEach(
+            function (element) {
 
-        revealItems.forEach(
-            function (item) {
-
-                item.classList.add(
-                    "show"
-                );
+                element.classList.add("show");
 
             }
         );
-
     }
-
 
 
     /* =====================================================
-       CONTACT FORM DEMO
+       YEAR
     ===================================================== */
 
-    const contactForm =
-        document.getElementById(
-            "contactForm"
-        );
+    document
+        .querySelectorAll("#year")
+        .forEach(function (element) {
 
+            element.textContent =
+                new Date().getFullYear();
 
-    const formMessage =
-        document.getElementById(
-            "formMessage"
-        );
-
-
-    if (
-        contactForm &&
-        formMessage
-    ) {
-
-
-        contactForm.addEventListener(
-            "submit",
-            function (event) {
-
-
-                event.preventDefault();
-
-
-                formMessage.textContent =
-                    "Thank you! Your enquiry has been received.";
-
-
-                contactForm.reset();
-
-            }
-        );
-
-    }
-
+        });
 
 });

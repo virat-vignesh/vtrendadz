@@ -1,69 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>Vtrendadz | Digital Marketing Agency in Tamil Nadu</title>
+    <title>Vtrendadz | Digital Marketing Agency</title>
 
     <meta name="description"
-          content="Vtrendadz is a digital marketing agency in Tamil Nadu offering web development, SEO, digital marketing, social media marketing and branding services.">
+          content="Vtrendadz is a digital marketing agency offering web development, SEO, performance marketing, social media marketing, branding, creative design, content marketing and lead generation.">
 
     <meta name="keywords"
-          content="digital marketing agency Tamil Nadu, web development Tamil Nadu, SEO agency Tamil Nadu, social media marketing, branding">
+          content="digital marketing agency, SEO agency, web development, social media marketing, performance marketing, branding, lead generation, Vtrendadz">
 
-    <meta name="robots" content="index, follow">
+    <meta name="robots"
+          content="index, follow">
 
-    <link rel="canonical" href="https://www.vtrendadz.com/">
+    <link rel="stylesheet"
+          href="css/style.css">
 
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- ================= PRELOADER ================= -->
+<!-- LOADER -->
 
-<div id="pageLoader" class="page-loader">
-
-    <div class="loader-wrapper">
-
-        <div class="loader-circle"></div>
-
-        <img
-            src="images/vtrendadz-logo-transparent.png"
-            alt="Vtrendadz"
-            class="loader-logo"
-        >
-
+<div class="loader" id="loader">
+    <div class="loader-logo">
+        <img src="images/vtrendadz-logo-transparent.png"
+             alt="Vtrendadz">
     </div>
-
 </div>
 
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 
-<header class="site-header">
+<header class="navbar" id="navbar">
+    <div class="container nav-container">
 
-    <nav class="navbar">
-
-        <a href="index.html" class="brand-logo">
-            <img
-                src="images/vtrendadz-logo-transparent.png"
-                alt="Vtrendadz - Turning Brands Into Trends"
-            >
+        <a href="index.html" class="logo">
+            <img src="images/vtrendadz-logo-transparent.png"
+                 alt="Vtrendadz Digital Marketing Agency">
         </a>
-
-
-        <!-- MOBILE BUTTON -->
 
         <button
             class="menu-toggle"
             id="menuToggle"
-            aria-label="Open menu"
+            aria-label="Open navigation menu"
             aria-expanded="false"
-            type="button"
-        >
+            aria-controls="navMenu">
 
             <span></span>
             <span></span>
@@ -71,167 +58,163 @@
 
         </button>
 
-
-        <!-- NAVIGATION -->
-
-        <div class="nav-menu" id="navMenu">
+        <nav class="nav-menu" id="navMenu">
 
             <a href="index.html">Home</a>
 
             <a href="about.html">About Us</a>
 
-
-            <!-- SERVICES -->
-
+            <!-- SERVICES DROPDOWN -->
             <div class="nav-dropdown">
 
                 <button
-                    class="dropdown-btn"
+                    class="dropdown-toggle"
                     type="button"
-                    aria-expanded="false"
-                >
+                    aria-expanded="false">
 
                     Services
 
-                    <span>⌄</span>
+                    <span class="dropdown-arrow">⌄</span>
 
                 </button>
-
 
                 <div class="dropdown-menu">
 
                     <a href="services.html">
-                        All Services
+                        <span class="dropdown-number">01</span>
+                        <span>
+                            <strong>All Services</strong>
+                            <small>Explore our solutions</small>
+                        </span>
                     </a>
 
                     <a href="services/web-development.html">
-                        Web Development
+                        <span class="dropdown-number">02</span>
+                        <span>
+                            <strong>Web Development</strong>
+                            <small>Websites & digital experiences</small>
+                        </span>
                     </a>
 
                     <a href="services/seo.html">
-                        SEO
+                        <span class="dropdown-number">03</span>
+                        <span>
+                            <strong>SEO</strong>
+                            <small>Search visibility & growth</small>
+                        </span>
                     </a>
 
-                    <a href="services/digital-marketing.html">
-                        Digital Marketing
+                    <a href="services/performance-marketing.html">
+                        <span class="dropdown-number">04</span>
+                        <span>
+                            <strong>Performance Marketing</strong>
+                            <small>Paid campaigns & conversions</small>
+                        </span>
                     </a>
 
-                    <a href="services/social-media.html">
-                        Social Media Marketing
+                    <a href="services/social-media-marketing.html">
+                        <span class="dropdown-number">05</span>
+                        <span>
+                            <strong>Social Media Marketing</strong>
+                            <small>Social growth & engagement</small>
+                        </span>
+                    </a>
+
+                    <a href="services/content-marketing.html">
+                        <span class="dropdown-number">06</span>
+                        <span>
+                            <strong>Content Marketing</strong>
+                            <small>Content that connects</small>
+                        </span>
                     </a>
 
                     <a href="services/branding.html">
-                        Branding &amp; Design
+                        <span class="dropdown-number">07</span>
+                        <span>
+                            <strong>Branding</strong>
+                            <small>Build a stronger identity</small>
+                        </span>
+                    </a>
+
+                    <a href="services/creative-design.html">
+                        <span class="dropdown-number">08</span>
+                        <span>
+                            <strong>Creative Design</strong>
+                            <small>Creative visual solutions</small>
+                        </span>
+                    </a>
+
+                    <a href="services/lead-generation.html">
+                        <span class="dropdown-number">09</span>
+                        <span>
+                            <strong>Lead Generation</strong>
+                            <small>Generate quality leads</small>
+                        </span>
                     </a>
 
                 </div>
-
             </div>
 
+            <a href="contact.html">Contact</a>
 
-            <a href="contact.html">
-                Contact
+            <a href="contact.html" class="nav-btn">
+                Let's Talk <span>↗</span>
             </a>
 
+        </nav>
 
-            <a href="contact.html" class="nav-cta">
-                Let's Talk
-            </a>
-
-        </div>
-
-    </nav>
-
+    </div>
 </header>
 
 
-
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <main>
 
 <section class="hero">
+    <div class="container">
+        <div class="hero-content reveal from-left">
 
-    <div class="hero-container">
-
-        <!-- LEFT -->
-
-        <div class="hero-content reveal">
-
-            <span class="eyebrow">
-                DIGITAL MARKETING AGENCY
-            </span>
-
+            <div class="hero-label">
+                DIGITAL GROWTH PARTNER
+            </div>
 
             <h1>
-                Build a brand people
-                <span>remember.</span>
+                Build Your Brand.
+                <span>Grow Your Business.</span>
             </h1>
 
-
             <p>
-                Vtrendadz helps businesses build a stronger digital
-                presence through web development, SEO, digital marketing,
-                social media marketing and branding.
+                Vtrendadz helps businesses build stronger digital identities
+                through strategic marketing, creative design, high-performing
+                websites, SEO and measurable digital campaigns.
             </p>
 
-
-            <div class="hero-actions">
-
-                <a href="contact.html" class="btn btn-primary">
-                    Let's Talk
+            <div class="hero-buttons">
+                <a href="services.html" class="btn btn-primary">
+                    Explore Services <span>↗</span>
                 </a>
 
-                <a href="services.html" class="btn btn-outline">
-                    Explore Services
+                <a href="contact.html" class="btn btn-outline">
+                    Start a Conversation
                 </a>
-
             </div>
 
         </div>
-
-
-        <!-- RIGHT -->
-
-        <div class="hero-image reveal">
-
-            <div class="hero-image-box">
-
-                <img
-                    src="images/hero.jpg"
-                    alt="Digital marketing services by Vtrendadz"
-                >
-
-                <div class="image-badge">
-
-                    <strong>360°</strong>
-
-                    <span>
-                        Digital Growth
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
     </div>
-
 </section>
 
 
-
-<!-- ================= SERVICES ================= -->
+<!-- SERVICES -->
 
 <section class="section section-light">
 
     <div class="container">
 
-        <div class="section-heading center reveal">
+        <div class="section-heading center reveal from-up">
 
-            <span class="small-title">
-                OUR SERVICES
+            <span class="eyebrow">
+                What We Do
             </span>
 
             <h2>
@@ -240,200 +223,165 @@
             </h2>
 
             <p>
-                From websites and SEO to digital marketing,
-                social media and branding, we help businesses
-                strengthen their online presence.
+                From your first idea to long-term digital growth,
+                we combine strategy, creativity and technology.
             </p>
 
         </div>
 
 
-        <div class="service-grid">
+        <div class="services-grid">
 
+            <article class="service-card reveal from-up">
 
-            <!-- WEB -->
+                <div class="service-icon">01</div>
 
-            <article class="service-card reveal">
+                <h3>Web Development</h3>
 
-                <div class="service-image">
+                <p>
+                    Responsive, modern and conversion-focused
+                    websites designed around your business goals.
+                </p>
 
-                    <img
-                        src="images/web-development.jpg"
-                        alt="Web development services"
-                    >
-
-                </div>
-
-                <div class="service-content">
-
-                    <h3>
-                        Web Development
-                    </h3>
-
-                    <p>
-                        Modern, responsive and user-friendly
-                        websites designed around your business goals.
-                    </p>
-
-                    <a
-                        href="services/web-development.html"
-                        class="text-link"
-                    >
-                        Explore Web Development →
-                    </a>
-
-                </div>
+                <a href="services/web-development.html"
+                   class="service-link">
+                    Explore Service <span>→</span>
+                </a>
 
             </article>
 
 
+            <article class="service-card reveal from-up">
 
-            <!-- SEO -->
+                <div class="service-icon">02</div>
 
-            <article class="service-card reveal">
+                <h3>SEO</h3>
 
-                <div class="service-image">
+                <p>
+                    Search engine optimization strategies that
+                    improve visibility, relevance and organic growth.
+                </p>
 
-                    <img
-                        src="images/seo.jpg"
-                        alt="SEO services"
-                    >
-
-                </div>
-
-                <div class="service-content">
-
-                    <h3>
-                        SEO
-                    </h3>
-
-                    <p>
-                        Practical search engine optimization
-                        strategies to improve online visibility.
-                    </p>
-
-                    <a
-                        href="services/seo.html"
-                        class="text-link"
-                    >
-                        Explore SEO →
-                    </a>
-
-                </div>
+                <a href="services/seo.html"
+                   class="service-link">
+                    Explore Service <span>→</span>
+                </a>
 
             </article>
 
 
+            <article class="service-card reveal from-up">
 
-            <!-- DIGITAL MARKETING -->
+                <div class="service-icon">03</div>
 
-            <article class="service-card reveal">
+                <h3>Performance Marketing</h3>
 
-                <div class="service-image">
+                <p>
+                    Data-driven advertising campaigns designed to
+                    generate qualified traffic and business results.
+                </p>
 
-                    <img
-                        src="images/digital-marketing.jpg"
-                        alt="Digital marketing services"
-                    >
-
-                </div>
-
-                <div class="service-content">
-
-                    <h3>
-                        Digital Marketing
-                    </h3>
-
-                    <p>
-                        Digital marketing strategies designed
-                        to connect your business with relevant audiences.
-                    </p>
-
-                    <a
-                        href="services/digital-marketing.html"
-                        class="text-link"
-                    >
-                        Explore Digital Marketing →
-                    </a>
-
-                </div>
+                <a href="services/performance-marketing.html"
+                   class="service-link">
+                    Explore Service <span>→</span>
+                </a>
 
             </article>
 
 
+            <article class="service-card reveal from-up">
 
-            <!-- SOCIAL MEDIA -->
+                <div class="service-icon">04</div>
 
-            <article class="service-card reveal">
+                <h3>Social Media Marketing</h3>
 
-                <div class="service-image">
+                <p>
+                    Build your audience and brand presence with
+                    strategic social media content and campaigns.
+                </p>
 
-                    <img
-                        src="images/social-media.jpg"
-                        alt="Social media marketing services"
-                    >
-
-                </div>
-
-                <div class="service-content">
-
-                    <h3>
-                        Social Media Marketing
-                    </h3>
-
-                    <p>
-                        Creative social media strategies that
-                        help your brand stay visible and consistent.
-                    </p>
-
-                    <a
-                        href="services/social-media.html"
-                        class="text-link"
-                    >
-                        Explore Social Media →
-                    </a>
-
-                </div>
+                <a href="services/social-media-marketing.html"
+                   class="service-link">
+                    Explore Service <span>→</span>
+                </a>
 
             </article>
 
 
+            <article class="service-card reveal from-up">
 
-            <!-- BRANDING -->
+                <div class="service-icon">05</div>
 
-            <article class="service-card reveal">
+                <h3>Content Marketing</h3>
 
-                <div class="service-image">
+                <p>
+                    Purposeful content that educates your audience,
+                    strengthens trust and supports search visibility.
+                </p>
 
-                    <img
-                        src="images/branding.jpg"
-                        alt="Branding and design services"
-                    >
-
-                </div>
-
-                <div class="service-content">
-
-                    <h3>
-                        Branding &amp; Design
-                    </h3>
-
-                    <p>
-                        Memorable visual identities that help
-                        businesses communicate clearly.
-                    </p>
-
-                    <a
-                        href="services/branding.html"
-                        class="text-link"
-                    >
-                        Explore Branding →
-                    </a>
-
-                </div>
+                <a href="services/content-marketing.html"
+                   class="service-link">
+                    Explore Service <span>→</span>
+                </a>
 
             </article>
 
+
+            <article class="service-card reveal from-up">
+
+                <div class="service-icon">06</div>
+
+                <h3>Branding</h3>
+
+                <p>
+                    Memorable brand identities that communicate
+                    your positioning with clarity and consistency.
+                </p>
+
+                <a href="services/branding.html"
+                   class="service-link">
+                    Explore Service <span>→</span>
+                </a>
+
+            </article>
+
+
+            <article class="service-card reveal from-up">
+
+                <div class="service-icon">07</div>
+
+                <h3>Creative Design</h3>
+
+                <p>
+                    Visual communication for digital campaigns,
+                    social media, websites and brand materials.
+                </p>
+
+                <a href="services/creative-design.html"
+                   class="service-link">
+                    Explore Service <span>→</span>
+                </a>
+
+            </article>
+
+
+            <article class="service-card reveal from-up">
+
+                <div class="service-icon">08</div>
+
+                <h3>Lead Generation</h3>
+
+                <p>
+                    Digital acquisition strategies focused on
+                    reaching potential customers and creating demand.
+                </p>
+
+                <a href="services/lead-generation.html"
+                   class="service-link">
+                    Explore Service <span>→</span>
+                </a>
+
+            </article>
 
         </div>
 
@@ -442,118 +390,154 @@
 </section>
 
 
-
-<!-- ================= ABOUT ================= -->
-
-<section class="section">
-
-    <div class="container about-grid">
-
-
-        <div class="about-image reveal">
-
-            <img
-                src="images/about.jpg"
-                alt="About Vtrendadz digital marketing agency"
-            >
-
-        </div>
-
-
-        <div class="about-content reveal">
-
-            <span class="small-title">
-                ABOUT VTRENDADZ
-            </span>
-
-
-            <h2>
-                Strategy first.
-                <span>Execution that matters.</span>
-            </h2>
-
-
-            <p>
-                Vtrendadz helps businesses create practical,
-                modern and effective digital experiences.
-            </p>
-
-
-            <p>
-                We combine design, technology, search,
-                marketing and branding to create a stronger
-                online presence for businesses.
-            </p>
-
-
-            <ul class="check-list">
-
-                <li>
-                    Responsive websites
-                </li>
-
-                <li>
-                    SEO-focused structure
-                </li>
-
-                <li>
-                    Digital marketing strategies
-                </li>
-
-                <li>
-                    Social media presence
-                </li>
-
-                <li>
-                    Professional branding
-                </li>
-
-            </ul>
-
-
-            <a
-                href="about.html"
-                class="btn btn-primary"
-            >
-                About Vtrendadz
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= CTA ================= -->
+<!-- ABOUT -->
 
 <section class="section">
 
     <div class="container">
 
-        <div class="cta reveal">
+        <div class="about-grid">
 
-            <div>
+            <div class="about-visual reveal from-left">
 
-                <h2>
-                    Ready to grow your
-                    digital presence?
-                </h2>
+                <div class="about-card">
 
-                <p>
-                    Tell us about your business and
-                    let's discuss your next digital project.
-                </p>
+                    <strong>360°</strong>
+
+                    <span>
+                        Digital marketing solutions
+                        under one roof.
+                    </span>
+
+                </div>
 
             </div>
 
 
-            <a
-                href="contact.html"
-                class="btn btn-primary"
-            >
-                Start a Conversation
+            <div class="about-content reveal from-right">
+
+                <span class="eyebrow">
+                    About Vtrendadz
+                </span>
+
+                <h2>
+                    Strategy meets
+                    <span>creativity.</span>
+                </h2>
+
+                <p>
+                    Vtrendadz is a digital marketing agency focused
+                    on helping businesses create a stronger and more
+                    meaningful online presence.
+                </p>
+
+                <p>
+                    We bring together design, technology, content,
+                    search and advertising to create connected digital
+                    experiences that support real business objectives.
+                </p>
+
+                <a href="about.html"
+                   class="btn btn-primary">
+                    Discover Vtrendadz <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="section section-light">
+
+    <div class="container">
+
+        <div class="section-heading center reveal">
+
+            <span class="eyebrow">
+                Our Process
+            </span>
+
+            <h2>
+                Simple process.
+                <span>Clear direction.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-card reveal from-up">
+                <div class="process-number">01 / DISCOVER</div>
+                <h3>Understand</h3>
+                <p>
+                    We understand your business, audience,
+                    goals and current digital presence.
+                </p>
+            </div>
+
+            <div class="process-card reveal from-up">
+                <div class="process-number">02 / STRATEGY</div>
+                <h3>Plan</h3>
+                <p>
+                    We create a focused strategy aligned with
+                    your business and marketing objectives.
+                </p>
+            </div>
+
+            <div class="process-card reveal from-up">
+                <div class="process-number">03 / CREATE</div>
+                <h3>Execute</h3>
+                <p>
+                    Our team turns the strategy into creative
+                    campaigns, content, websites and experiences.
+                </p>
+            </div>
+
+            <div class="process-card reveal from-up">
+                <div class="process-number">04 / GROW</div>
+                <h3>Improve</h3>
+                <p>
+                    We monitor performance and continuously
+                    improve your digital growth activities.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box reveal from-up">
+
+            <h2>
+                Ready to take your
+                <span>digital presence</span>
+                further?
+            </h2>
+
+            <p>
+                Let's discuss your goals and build a digital
+                strategy around your business.
+            </p>
+
+            <a href="contact.html"
+               class="btn btn-primary">
+                Let's Talk <span>↗</span>
             </a>
 
         </div>
@@ -565,104 +549,106 @@
 </main>
 
 
+<!-- FOOTER -->
 
-<!-- ================= FOOTER ================= -->
-
-<footer class="site-footer">
+<footer class="footer">
 
     <div class="container">
 
         <div class="footer-grid">
 
-
-            <!-- COLUMN 1 -->
-
             <div class="footer-brand">
 
-                <a
-                    href="index.html"
-                    class="brand-logo"
-                >
+                <a href="index.html"
+                   class="footer-logo">
 
-                    <img
-                        src="images/vtrendadz-logo-transparent.png"
-                        alt="Vtrendadz"
-                    >
+                    <img src="images/vtrendadz-logo-transparent.png"
+                         alt="Vtrendadz Digital Marketing Agency">
 
                 </a>
 
-
                 <p>
-                    Vtrendadz is a digital marketing agency
-                    helping businesses build stronger online
-                    visibility through web development, SEO,
-                    digital marketing, social media and branding.
+                    Vtrendadz is a digital marketing agency helping
+                    businesses grow through creative design, web
+                    development, SEO, performance marketing and
+                    digital strategies.
                 </p>
+
+                <a href="contact.html"
+                   class="footer-cta">
+                    Let's Grow Together <span>↗</span>
+                </a>
 
             </div>
 
-
-
-            <!-- COLUMN 2 -->
 
             <div class="footer-services">
 
-                <div class="footer-title">
-                    Services
+                    <h3>Services</h3>
+
+                    <ul>
+
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="seo.html">SEO</a></li>
+                        <li><a href="performance-marketing.html">Performance Marketing</a></li>
+                        <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
+                        <li><a href="content-marketing.html">Content Marketing</a></li>
+                        <li><a href="branding.html">Branding</a></li>
+                        <li><a href="creative-design.html">Creative Design</a></li>
+                        <li><a href="lead-generation.html">Lead Generation</a></li>
+
+                    </ul>
+
                 </div>
 
-
-                <a href="services/web-development.html">
-                    Web Development
-                </a>
-
-                <a href="services/seo.html">
-                    SEO
-                </a>
-
-                <a href="services/digital-marketing.html">
-                    Digital Marketing
-                </a>
-
-                <a href="services/social-media.html">
-                    Social Media Marketing
-                </a>
-
-                <a href="services/branding.html">
-                    Branding &amp; Design
-                </a>
-
-            </div>
-
-
-
-            <!-- COLUMN 3 -->
 
             <div class="footer-contact">
 
-                <div class="footer-title">
-                    Contact
+                <h3>Contact</h3>
+
+                <div class="contact-item">
+
+                    <span class="contact-icon">✉</span>
+
+                    <div>
+                        <small>Email</small>
+
+                        <a href="mailto:hello@vtrendadz.com">
+                            hello@vtrendadz.com
+                        </a>
+                    </div>
+
                 </div>
 
 
-                <p>
-                    Let's discuss your next digital project.
-                </p>
+                <div class="contact-item">
+
+                    <span class="contact-icon">☎</span>
+
+                    <div>
+                        <small>Phone</small>
+
+                        <a href="tel:+919000000000">
+                            +91 90000 00000
+                        </a>
+                    </div>
+
+                </div>
 
 
-                <a href="mailto:hello@vtrendadz.com">
-                    hello@vtrendadz.com
-                </a>
+                <div class="contact-item">
 
+                    <span class="contact-icon">⌖</span>
 
-                <a href="tel:+910000000000">
-                    +91 00000 00000
-                </a>
+                    <div>
+                        <small>Location</small>
 
+                        <p>
+                            Tamil Nadu, India
+                        </p>
+                    </div>
 
-                <a href="contact.html">
-                    Contact Vtrendadz
-                </a>
+                </div>
 
             </div>
 
@@ -671,7 +657,12 @@
 
         <div class="footer-bottom">
 
-            © 2026 Vtrendadz. All Rights Reserved.
+            <p>
+                © <span id="year"></span>
+                Vtrendadz. All Rights Reserved.
+            </p>
+
+           
 
         </div>
 
