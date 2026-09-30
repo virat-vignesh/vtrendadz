@@ -182,18 +182,18 @@ document.addEventListener("DOMContentLoaded", function () {
          * propagating to document.
          */
 
-        menuToggle.addEventListener(
-            "touchend",
-            function (event) {
+        // menuToggle.addEventListener(
+        //     "touchend",
+        //     function (event) {
 
-                event.preventDefault();
-                event.stopPropagation();
+        //         event.preventDefault();
+        //         event.stopPropagation();
 
-                toggleMenu(event);
+        //         toggleMenu(event);
 
-            },
-            { passive: false }
-        );
+        //     },
+        //     { passive: false }
+        // );
     }
 
 
